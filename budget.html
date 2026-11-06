@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Finora | Smart Event Budget Planner</title>
+
+  <link rel="stylesheet" href="budget.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="budget-header">
+  <a href="index.html" class="brand">
+    <span>F</span> finora
+  </a>
+
+  <div class="header-actions">
+    <a href="index.html">← Dashboard</a>
+    <button id="logout-btn">Log out</button>
+  </div>
+</header>
+
+<main class="budget-main">
+
+  <!-- PAGE HEADING -->
+  <section class="page-heading">
+    <p class="eyebrow">YOUR EVENT FINANCES</p>
+    <h1>Budget <em>overview.</em></h1>
+    <p>Plan every detail and keep your celebration on budget.</p>
+  </section>
+
+  <!-- CURRENT EVENT -->
+  <section class="event-banner">
+    <div>
+      <p class="eyebrow">CURRENT EVENT</p>
+      <h2 id="event-title">Your Event</h2>
+      <p id="event-details">Loading event details...</p>
+    </div>
+
+    <div class="banner-type" id="event-type">EVENT</div>
+  </section>
+
+  <!-- ALL RECOMMENDATIONS -->
+  <section class="recommendations-section">
+
+    <div class="recommendations-heading">
+      <p class="eyebrow">YOUR EVENT, YOUR CHOICES</p>
+      <h2>Everything for your celebration.</h2>
+      <p>
+        Explore packages and select the services that match your event.
+      </p>
+    </div>
+
+    <div class="recommendation-group">
+      <div class="group-heading">
+        <h3>🏛️ Venue</h3>
+        <span>01</span>
+      </div>
+      <div class="recommendation-grid" id="venue-list"></div>
+    </div>
+
+    <div class="recommendation-group">
+      <div class="group-heading">
+        <h3>🍽️ Food & Catering</h3>
+        <span>02</span>
+      </div>
+      <div class="recommendation-grid" id="catering-list"></div>
+    </div>
+
+    <div class="recommendation-group">
+      <div class="group-heading">
+        <h3>🌸 Decoration</h3>
+        <span>03</span>
+      </div>
+      <div class="recommendation-grid" id="decoration-list"></div>
+    </div>
+
+    <div class="recommendation-group">
+      <div class="group-heading">
+        <h3>📸 Photography & Videography</h3>
+        <span>04</span>
+      </div>
+      <div class="recommendation-grid" id="photography-list"></div>
+    </div>
+
+    <div class="recommendation-group">
+      <div class="group-heading">
+        <h3>🎵 Entertainment</h3>
+        <span>05</span>
+      </div>
+      <div class="recommendation-grid" id="entertainment-list"></div>
+    </div>
+
+    <div class="recommendation-group">
+      <div class="group-heading">
+        <h3>🚗 Transportation</h3>
+        <span>06</span>
+      </div>
+      <div class="recommendation-grid" id="transport-list"></div>
+    </div>
+
+    <div class="recommendation-group">
+      <div class="group-heading">
+        <h3>💌 Invitations & Gifts</h3>
+        <span>07</span>
+      </div>
+      <div class="recommendation-grid" id="invitation-list"></div>
+    </div>
+
+    <div class="recommendation-group">
+      <div class="group-heading">
+        <h3>💄 Makeup & Styling</h3>
+        <span>08</span>
+      </div>
+      <div class="recommendation-grid" id="makeup-list"></div>
+    </div>
+
+    <div class="recommendation-group">
+      <div class="group-heading">
+        <h3>💡 Lighting & Sound</h3>
+        <span>09</span>
+      </div>
+      <div class="recommendation-grid" id="lighting-list"></div>
+    </div>
+
+    <div class="recommendation-group">
+      <div class="group-heading">
+        <h3>🎯 Event Management</h3>
+        <span>10</span>
+      </div>
+      <div class="recommendation-grid" id="management-list"></div>
+    </div>
+
+    <p class="recommendation-disclaimer">
+      Package prices are illustrative estimates for planning purposes,
+      not verified vendor quotations.
+    </p>
+
+    <p id="recommendation-message" class="recommendation-message"></p>
+
+  </section>
+
+  <!-- FINANCIAL SUMMARY -->
+  <section class="summary-grid">
+
+    <article class="summary-card">
+      <span>Total budget</span>
+      <h2 id="total-budget">₹0</h2>
+      <small>Your planned spending limit</small>
+    </article>
+
+    <article class="summary-card">
+      <span>Actual expenses</span>
+      <h2 id="total-spent">₹0</h2>
+      <small>Expenses entered so far</small>
+    </article>
+
+    <article class="summary-card">
+      <span>Remaining balance</span>
+      <h2 id="remaining-budget">₹0</h2>
+      <small>Budget left to spend</small>
+    </article>
+
+  </section>
+
+  <!-- CHART AND BUDGET PROGRESS -->
+  <section class="analysis-grid">
+
+    <article class="panel">
+      <p class="eyebrow">SPENDING SUMMARY</p>
+      <h2>Budget utilization</h2>
+
+      <div class="chart-area">
+
+        <div class="donut" id="donut-chart">
+          <div class="donut-center">
+            <strong id="spent-percent">0%</strong>
+            <span>Spent</span>
+          </div>
+        </div>
+
+        <div class="chart-legend" id="chart-legend"></div>
+
+      </div>
+    </article>
+
+    <article class="panel progress-panel">
+      <p class="eyebrow">FINANCIAL HEALTH</p>
+      <h2>Budget progress</h2>
+
+      <p class="progress-description">
+        See how much of your event budget has been used.
+      </p>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <div class="progress-labels">
+        <span>
+          Spent: <strong id="progress-spent">₹0</strong>
+        </span>
+        <span id="progress-percent">0%</span>
+      </div>
+
+      <div class="budget-tip" id="budget-tip">
+        Add your expenses to see your budget status.
+      </div>
+    </article>
+
+  </section>
+
+  <!-- EXPENSE BREAKDOWN -->
+  <section class="panel expenses-panel" id="expenses-panel">
+
+    <div class="panel-heading">
+      <div>
+        <p class="eyebrow">MANAGE YOUR MONEY</p>
+        <h2>Expense breakdown</h2>
+        <p class="panel-subtitle">
+          Edit or enter your actual expenses.
+        </p>
+      </div>
+
+      <button id="reset-btn" class="reset-btn">
+        Reset expenses
+      </button>
+    </div>
+
+    <div id="expense-list" class="expense-list"></div>
+
+    <div class="expense-total">
+      <span>Total actual expenses</span>
+      <strong id="expense-total">₹0</strong>
+    </div>
+
+    <p id="save-status" class="save-status">
+      Changes are saved automatically.
+    </p>
+
+  </section>
+
+  <!-- FINAL EVENT REPORT -->
+  <section class="panel report-panel">
+
+    <div>
+      <p class="eyebrow">YOUR EVENT SUMMARY</p>
+      <h2>Stay in control.</h2>
+      <p id="report-text">
+        Your budget report will update as you enter expenses.
+      </p>
+    </div>
+
+    <button id="print-btn">
+      Print budget report ↗
+    </button>
+
+  </section>
+
+  <footer>
+    © 2026 Finora · Plan beautifully. Celebrate freely.
+  </footer>
+
+</main>
+
+<script src="budget.js"></script>
+
+</body>
+</html>

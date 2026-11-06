@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finora | Event Planner</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">F</span> finora
+      </a>
+
+      <p class="side-label">WORKSPACE</p>
+      <nav class="side-nav">
+        <a href="#overview" class="nav-link active">◈ <span>Overview</span></a>
+        <a href="#events" class="nav-link">✧ <span>My Events</span></a>
+        <a href="#planner" class="nav-link">▤ <span>Budget Planner</span></a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <span>✦</span>
+          <strong>Plan with purpose.</strong>
+          <p>Make every celebration memorable without overspending.</p>
+        </div>
+        <button class="logout-btn" id="logout-btn">↪ &nbsp; Log out</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="top-eyebrow">YOUR EVENT PLANNING SPACE</p>
+          <h2>Welcome, <span id="user-name">Planner</span>!</h2>
+        </div>
+        <div class="profile">
+          <div class="profile-avatar" id="profile-avatar">P</div>
+          <div>
+            <strong id="profile-name">Planner</strong>
+            <small>Finora member</small>
+          </div>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">MAKE ROOM FOR MEMORIES</p>
+          <h1>Your moments.<br><em>Your perfect plan.</em></h1>
+          <p>From the first idea to the final detail, plan your next celebration with confidence.</p>
+          <a href="#planner" class="hero-btn">Start planning <span>→</span></a>
+        </div>
+        <div class="hero-decoration">F</div>
+      </section>
+
+      <section class="section" id="overview">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">EXPLORE POSSIBILITIES</p>
+            <h2>Choose your celebration</h2>
+          </div>
+          <p class="section-note">Select an event to get started</p>
+        </div>
+
+        <div class="event-grid" id="event-grid">
+          <button class="event-card selected" data-event="Wedding">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" alt="Wedding">
+            <span class="event-number">01</span>
+            <span class="event-name">Wedding</span>
+            <span class="event-desc">A day to remember</span>
+          </button>
+
+          <button class="event-card" data-event="Birthday">
+            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=80" alt="Birthday party">
+            <span class="event-number">02</span>
+            <span class="event-name">Birthday</span>
+            <span class="event-desc">Celebrate another year</span>
+          </button>
+
+          <button class="event-card" data-event="Baby Shower">
+            <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=700&q=80" alt="Baby shower celebration">
+            <span class="event-number">03</span>
+            <span class="event-name">Baby Shower</span>
+            <span class="event-desc">Welcome little beginnings</span>
+          </button>
+
+          <button class="event-card" data-event="Engagement">
+            <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=700&q=80" alt="Engagement">
+            <span class="event-number">04</span>
+            <span class="event-name">Engagement</span>
+            <span class="event-desc">A beautiful new chapter</span>
+          </button>
+
+          <button class="event-card" data-event="Anniversary">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=700&q=80" alt="Anniversary">
+            <span class="event-number">05</span>
+            <span class="event-name">Anniversary</span>
+            <span class="event-desc">Celebrate togetherness</span>
+          </button>
+
+          <button class="event-card" data-event="Graduation Party">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=700&q=80" alt="Graduation">
+            <span class="event-number">06</span>
+            <span class="event-name">Graduation</span>
+            <span class="event-desc">Celebrate your achievement</span>
+          </button>
+
+          <button class="event-card" data-event="Housewarming">
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=80" alt="Housewarming">
+            <span class="event-number">07</span>
+            <span class="event-name">Housewarming</span>
+            <span class="event-desc">A fresh start at home</span>
+          </button>
+
+          <button class="event-card" data-event="College Fest">
+            <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=700&q=80" alt="College fest">
+            <span class="event-number">08</span>
+            <span class="event-name">College Fest</span>
+            <span class="event-desc">Bring everyone together</span>
+          </button>
+
+          <button class="event-card" data-event="Corporate Event">
+            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=700&q=80" alt="Corporate event">
+            <span class="event-number">09</span>
+            <span class="event-name">Corporate Event</span>
+            <span class="event-desc">Make an impact</span>
+          </button>
+
+          <button class="event-card" data-event="Naming Ceremony">
+            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=700&q=80" alt="Family celebration">
+            <span class="event-number">10</span>
+            <span class="event-name">Naming Ceremony</span>
+            <span class="event-desc">A little one's big day</span>
+          </button>
+
+          <button class="event-card" data-event="Farewell Party">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=80" alt="Farewell party">
+            <span class="event-number">11</span>
+            <span class="event-name">Farewell Party</span>
+            <span class="event-desc">Celebrate the memories</span>
+          </button>
+
+          <button class="event-card" data-event="Other Event">
+            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=700&q=80" alt="Special celebration">
+            <span class="event-number">12</span>
+            <span class="event-name">Other Event</span>
+            <span class="event-desc">Create your own occasion</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="planner-section" id="planner">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">LET'S GET ORGANIZED</p>
+            <h2>Create your event plan</h2>
+          </div>
+        </div>
+
+        <div class="planner-layout">
+          <form id="planner-form" class="planner-form">
+            <div class="selected-event">
+              <span>SELECTED EVENT</span>
+              <strong id="selected-event-name">Wedding</strong>
+            </div>
+
+            <div class="form-grid">
+              <div class="input-group full">
+                <label for="event-title">Event name</label>
+                <input id="event-title" type="text" placeholder="e.g. My Dream Wedding" required>
+              </div>
+
+              <div class="input-group">
+                <label for="event-date">Event date</label>
+                <input id="event-date" type="date" required>
+              </div>
+
+              <div class="input-group">
+                <label for="event-city">City</label>
+                <select id="event-city" required>
+                  <option value="">Choose city</option>
+                  <option>Vijayawada</option>
+                  <option>Guntur</option>
+                  <option>Tenali</option>
+                  <option>Nellore</option>
+                  <option>Hyderabad</option>
+                  <option>Chennai</option>
+                  <option>Bengaluru</option>
+                  <option>Visakhapatnam</option>
+                  <option>Tirupati</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label for="guest-count">Number of guests</label>
+                <input id="guest-count" type="number" min="1" placeholder="e.g. 200" required>
+              </div>
+
+              <div class="input-group">
+                <label for="event-budget">Total budget (₹)</label>
+                <input id="event-budget" type="number" min="1" placeholder="e.g. 500000" required>
+              </div>
+            </div>
+
+            <button type="submit" class="create-btn">Create my budget plan <span>→</span></button>
+            <p id="form-message" class="form-message"></p>
+          </form>
+
+          <div class="planner-aside">
+            <div class="aside-icon">✦</div>
+            <h3>A celebration<br>within your budget.</h3>
+            <p>Tell us about your event. Finora will prepare a starter budget breakdown to help you organize your expenses.</p>
+            <div class="aside-line"></div>
+            <span>PLAN SMARTER · CELEBRATE BETTER</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section events-section" id="events">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">YOUR PLANNING JOURNEY</p>
+            <h2>My events</h2>
+          </div>
+        </div>
+        <div id="my-events" class="my-events">
+          <div class="empty-state">
+            <span>✧</span>
+            <h3>No events planned yet</h3>
+            <p>Your event plans will appear here once you create one.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>© 2026 Finora · Plan beautifully. Celebrate freely.</footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
